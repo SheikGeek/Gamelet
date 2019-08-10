@@ -14,6 +14,8 @@
 		2847125B22FF12640050605C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2847125922FF12640050605C /* LaunchScreen.storyboard */; };
 		2847126622FF12640050605C /* GameCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847126522FF12640050605C /* GameCollectionTests.swift */; };
 		2847127122FF12640050605C /* GameCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847127022FF12640050605C /* GameCollectionUITests.swift */; };
+		2847127F22FF18D50050605C /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847127E22FF18D50050605C /* GameService.swift */; };
+		2847128122FF18E40050605C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847128022FF18E40050605C /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2847126C22FF12640050605C /* GameCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2847127022FF12640050605C /* GameCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionUITests.swift; sourceTree = "<group>"; };
 		2847127222FF12640050605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2847127E22FF18D50050605C /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		2847128022FF18E40050605C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		2847124F22FF12640050605C /* GameCollection */ = {
 			isa = PBXGroup;
 			children = (
+				2847128222FF18EB0050605C /* Network */,
 				2847125022FF12640050605C /* AppDelegate.swift */,
 				2847125222FF12640050605C /* ViewController.swift */,
 				2847125422FF12640050605C /* Main.storyboard */,
@@ -123,6 +128,15 @@
 				2847127222FF12640050605C /* Info.plist */,
 			);
 			path = GameCollectionUITests;
+			sourceTree = "<group>";
+		};
+		2847128222FF18EB0050605C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2847127E22FF18D50050605C /* GameService.swift */,
+				2847128022FF18E40050605C /* Game.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2847125322FF12640050605C /* ViewController.swift in Sources */,
+				2847127F22FF18D50050605C /* GameService.swift in Sources */,
 				2847125122FF12640050605C /* AppDelegate.swift in Sources */,
+				2847128122FF18E40050605C /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
