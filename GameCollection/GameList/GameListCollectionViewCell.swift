@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GameListCollectionViewCell: UICollectionViewCell {
+class GameListCollectionViewCell: UICollectionViewCell, NibNameable {
     
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
@@ -45,11 +45,19 @@ class GameListCollectionViewCell: UICollectionViewCell {
     
     static func calculateCellHeight(name: String, width: CGFloat) -> CGFloat {
         
-        let tempLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: 0))
+        let contentWidth: CGFloat = 40 //left = 20, right = 20
+        let tempLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width - contentWidth, height: 0))
+        tempLabel.numberOfLines = 0
+        tempLabel.lineBreakMode = .byWordWrapping
         tempLabel.text = name
         tempLabel.font = UIFont.systemFont(ofSize: 13.0)
         
         tempLabel.sizeToFit()
-        return tempLabel.frame.height
+        
+        let labelHeight: CGFloat = tempLabel.frame.height
+        let imageHeight: CGFloat = 160
+        let heightPadding: CGFloat = 50 //Bottom = 20, Top = 20, BetweenElements = 10
+        
+        return labelHeight + imageHeight + heightPadding
     }
 }

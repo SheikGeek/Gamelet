@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hhP-Uo-7Rs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hhP-Uo-7Rs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-p5-vnN">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-p5-vnN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Background Color"/>
                                 <collectionViewLayout key="collectionViewLayout" id="yJW-dR-SfC" customClass="GameGridCollectionViewLayout" customModule="GameCollection" customModuleProvider="target"/>
                                 <cells/>
@@ -32,6 +31,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="Background Color"/>
+                        <constraints>
+                            <constraint firstItem="hNq-p5-vnN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LxF-7z-ERq"/>
+                            <constraint firstItem="hNq-p5-vnN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="USf-vs-rXq"/>
+                            <constraint firstItem="hNq-p5-vnN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sLJ-CZ-tPb"/>
+                            <constraint firstItem="hNq-p5-vnN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vV3-pG-Zxo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mba-gj-kgC"/>

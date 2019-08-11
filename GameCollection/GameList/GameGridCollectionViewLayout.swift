@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol GameGridCollectionViewLayoutDelegate: class {
-    func cellHeight(at indexPath: IndexPath) -> CGFloat
+    func cellHeight(at indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat
 }
 
 class GameGridCollectionViewLayout: UICollectionViewLayout {
@@ -29,8 +29,8 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
         guard let collectionView = collectionView else {
             return 0
         }
-        let insets = collectionView.contentInset
-        return collectionView.bounds.width - (insets.left + insets.right)
+
+        return collectionView.bounds.width
     }
     
     override var collectionViewContentSize: CGSize {
@@ -40,30 +40,46 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
     override func prepare() {
         
         let numberOfColumns = 2
-        let spaceBetweenCells: CGFloat = 6
         
+        let spaceBetweenCells: CGFloat = 12
         let columnWidth = contentWidth / CGFloat(numberOfColumns)
-        var xOffset: CGFloat = 0
-
-        var column = 0
-        var yOffset: CGFloat = 0
         
+        var column = 0
+        var xOffset: CGFloat = spaceBetweenCells
+        var yOffsetTotals = [CGFloat]()
+        var nextRowYOffsets = [CGFloat]()
+        
+        for index in 0..<numberOfColumns {
+            yOffsetTotals.append(spaceBetweenCells)
+            nextRowYOffsets.append(0)
+        }
+
         for index in 0 ..< numberOfItems {
             
             let indexPath = IndexPath(item: index, section: 0)
             
-            let cellHeight = delegate?.cellHeight(at: indexPath) ?? 0
-            let frame = CGRect(x: xOffset, y: yOffset, width: columnWidth, height: cellHeight)
+            let cellWidth = columnWidth - spaceBetweenCells
+            let cellHeight = delegate?.cellHeight(at: indexPath, cellWidth: cellWidth) ?? 0
+            let frame = CGRect(x: xOffset, y: yOffsetTotals[column], width: cellWidth, height: cellHeight)
             
-            // 5. Creates an UICollectionViewLayoutItem with the frame and add it to the cache
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = frame
             layoutAttributes.append(attributes)
             
-            contentHeight = max(contentHeight, frame.maxY)
+            nextRowYOffsets[column] = cellHeight + spaceBetweenCells
+            yOffsetTotals[column] += cellHeight + spaceBetweenCells
+
+            let nextColumn = column + 1
+            if nextColumn > numberOfColumns - 1 {
+                column = 0
+            } else {
+                column = nextColumn
+            }
             
-            column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            xOffset = CGFloat(column) * columnWidth + spaceBetweenCells
         }
+        
+        contentHeight = yOffsetTotals.max() ?? 0
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

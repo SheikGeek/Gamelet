@@ -28,6 +28,6 @@ class ImageService: NSObject {
             }
 
             completion(UIImage(data: data))
-        }
+        }.resume()
     }
 }

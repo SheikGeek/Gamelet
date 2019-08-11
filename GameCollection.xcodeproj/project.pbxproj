@@ -20,6 +20,7 @@
 		28DBAEF12300836C0009DD8C /* GameListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEEC2300836C0009DD8C /* GameListCollectionViewCell.swift */; };
 		28DBAEF22300836C0009DD8C /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEED2300836C0009DD8C /* ImageService.swift */; };
 		28DBAEF42300841C0009DD8C /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEF32300841C0009DD8C /* GameListViewController.swift */; };
+		28DBAEF72300860E0009DD8C /* NibNameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEF62300860E0009DD8C /* NibNameable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		28DBAEEC2300836C0009DD8C /* GameListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewCell.swift; sourceTree = "<group>"; };
 		28DBAEED2300836C0009DD8C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		28DBAEF32300841C0009DD8C /* GameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
+		28DBAEF62300860E0009DD8C /* NibNameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				28DBAEE82300836C0009DD8C /* GameList */,
-				28DBAEED2300836C0009DD8C /* ImageService.swift */,
+				28DBAEF5230085EC0009DD8C /* Helpers */,
 				2847128222FF18EB0050605C /* Network */,
 				2847125022FF12640050605C /* AppDelegate.swift */,
 				2847125422FF12640050605C /* Main.storyboard */,
@@ -142,8 +144,9 @@
 		2847128222FF18EB0050605C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2847127E22FF18D50050605C /* GameService.swift */,
 				2847128022FF18E40050605C /* Game.swift */,
+				2847127E22FF18D50050605C /* GameService.swift */,
+				28DBAEED2300836C0009DD8C /* ImageService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -151,12 +154,20 @@
 		28DBAEE82300836C0009DD8C /* GameList */ = {
 			isa = PBXGroup;
 			children = (
-				28DBAEF32300841C0009DD8C /* GameListViewController.swift */,
-				28DBAEEA2300836C0009DD8C /* GameListCollectionViewCell.xib */,
 				28DBAEEB2300836C0009DD8C /* GameGridCollectionViewLayout.swift */,
 				28DBAEEC2300836C0009DD8C /* GameListCollectionViewCell.swift */,
+				28DBAEEA2300836C0009DD8C /* GameListCollectionViewCell.xib */,
+				28DBAEF32300841C0009DD8C /* GameListViewController.swift */,
 			);
 			path = GameList;
+			sourceTree = "<group>";
+		};
+		28DBAEF5230085EC0009DD8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				28DBAEF62300860E0009DD8C /* NibNameable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 			files = (
 				28DBAEF22300836C0009DD8C /* ImageService.swift in Sources */,
 				2847127F22FF18D50050605C /* GameService.swift in Sources */,
+				28DBAEF72300860E0009DD8C /* NibNameable.swift in Sources */,
 				2847125122FF12640050605C /* AppDelegate.swift in Sources */,
 				28DBAEF02300836C0009DD8C /* GameGridCollectionViewLayout.swift in Sources */,
 				28DBAEF12300836C0009DD8C /* GameListCollectionViewCell.swift in Sources */,
