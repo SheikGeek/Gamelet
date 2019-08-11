@@ -24,7 +24,7 @@ class GameListViewController: UIViewController {
 
 extension GameListViewController: GameGridCollectionViewLayoutDelegate {
     func cellHeight(at indexPath: IndexPath) -> CGFloat {
-        
+        return 0
     }
     
     

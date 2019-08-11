@@ -27,27 +27,27 @@ class GameListCollectionViewCell: UICollectionViewCell {
         
         ImageService.main.fetchImage(from: imageURL) { [weak self] image in
             
-            guard let image = image else {
+            guard let image = image, let self = self else {
                 return
             }
             
             DispatchQueue.main.async {
-                UIView.transition(with: self?.imageView,
+                UIView.transition(with: self.gameImageView,
                                   duration: 0.3,
                                   options: .transitionCrossDissolve,
                                   animations: {
-                                    self?.imageView.image = image
+                                    self.gameImageView.image = image
                                   },
                                   completion: nil)
             }
         }
     }
     
-    static func calculateCellHeight(name: String, width: CGFloat) -> CGFLoat {
+    static func calculateCellHeight(name: String, width: CGFloat) -> CGFloat {
         
         let tempLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: 0))
         tempLabel.text = name
-        tempLabel.font = UIFont.systemFontOfSize(13.0)
+        tempLabel.font = UIFont.systemFont(ofSize: 13.0)
         
         tempLabel.sizeToFit()
         return tempLabel.frame.height
