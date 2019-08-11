@@ -33,7 +33,6 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8Ce-e3-ytW" secondAttribute="trailing" constant="20" id="079-GV-gVI"/>
                 <constraint firstItem="8Ce-e3-ytW" firstAttribute="top" secondItem="Gn1-y0-mhq" secondAttribute="top" constant="20" id="7dj-q6-7c7"/>

@@ -14,10 +14,26 @@ class GameListCollectionViewCell: UICollectionViewCell, NibNameable {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameNameLabel: UILabel!
     
+    private let shadowColor = UIColor(named: "Tertiary Color")?.cgColor
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        contentView.backgroundColor = UIColor.white
+        contentView.layer.cornerRadius = 4.0
+        contentView.layer.borderColor = shadowColor
+        contentView.layer.masksToBounds = true
+        
+        layer.shadowColor = shadowColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.3
+        layer.masksToBounds = false
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        gameImageView.backgroundColor = UIColor.clear
         gameImageView.image = nil
         gameNameLabel.text = nil
     }
@@ -27,7 +43,7 @@ class GameListCollectionViewCell: UICollectionViewCell, NibNameable {
         
         ImageService.main.fetchImage(from: imageURL) { [weak self] image in
             
-            guard let image = image, let self = self else {
+            guard let self = self else {
                 return
             }
             
@@ -36,6 +52,7 @@ class GameListCollectionViewCell: UICollectionViewCell, NibNameable {
                                   duration: 0.3,
                                   options: .transitionCrossDissolve,
                                   animations: {
+                                    self.gameImageView.backgroundColor = image == nil ? UIColor(named: "Secondary Color") : UIColor.clear
                                     self.gameImageView.image = image
                                   },
                                   completion: nil)

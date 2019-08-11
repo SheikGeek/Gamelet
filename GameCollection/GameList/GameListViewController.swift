@@ -66,6 +66,4 @@ extension GameListViewController: GameGridCollectionViewLayoutDelegate {
         let game = dataSource[indexPath.item]
         return GameListCollectionViewCell.calculateCellHeight(name: game.name, width: cellWidth)
     }
-    
-    
 }
