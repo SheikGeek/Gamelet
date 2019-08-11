@@ -14,13 +14,16 @@
 		2847126622FF12640050605C /* GameCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847126522FF12640050605C /* GameCollectionTests.swift */; };
 		2847127122FF12640050605C /* GameCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847127022FF12640050605C /* GameCollectionUITests.swift */; };
 		2847127F22FF18D50050605C /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847127E22FF18D50050605C /* GameService.swift */; };
-		2847128122FF18E40050605C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847128022FF18E40050605C /* Game.swift */; };
+		2847128122FF18E40050605C /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2847128022FF18E40050605C /* BoardGame.swift */; };
 		28DBAEEF2300836C0009DD8C /* GameListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DBAEEA2300836C0009DD8C /* GameListCollectionViewCell.xib */; };
 		28DBAEF02300836C0009DD8C /* GameGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEEB2300836C0009DD8C /* GameGridCollectionViewLayout.swift */; };
 		28DBAEF12300836C0009DD8C /* GameListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEEC2300836C0009DD8C /* GameListCollectionViewCell.swift */; };
 		28DBAEF22300836C0009DD8C /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEED2300836C0009DD8C /* ImageService.swift */; };
 		28DBAEF42300841C0009DD8C /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEF32300841C0009DD8C /* GameListViewController.swift */; };
 		28DBAEF72300860E0009DD8C /* NibNameable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEF62300860E0009DD8C /* NibNameable.swift */; };
+		28DBAEFE2300B48F0009DD8C /* SteamGames.json in Resources */ = {isa = PBXBuildFile; fileRef = 28DBAEFD2300B48F0009DD8C /* SteamGames.json */; };
+		28DBAF002300B90D0009DD8C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEFF2300B90D0009DD8C /* Game.swift */; };
+		28DBAF022300BA050009DD8C /* SteamGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAF012300BA050009DD8C /* SteamGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +57,16 @@
 		2847127022FF12640050605C /* GameCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionUITests.swift; sourceTree = "<group>"; };
 		2847127222FF12640050605C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2847127E22FF18D50050605C /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		2847128022FF18E40050605C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2847128022FF18E40050605C /* BoardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
 		28DBAEEA2300836C0009DD8C /* GameListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameListCollectionViewCell.xib; sourceTree = "<group>"; };
 		28DBAEEB2300836C0009DD8C /* GameGridCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridCollectionViewLayout.swift; sourceTree = "<group>"; };
 		28DBAEEC2300836C0009DD8C /* GameListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListCollectionViewCell.swift; sourceTree = "<group>"; };
 		28DBAEED2300836C0009DD8C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		28DBAEF32300841C0009DD8C /* GameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		28DBAEF62300860E0009DD8C /* NibNameable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibNameable.swift; sourceTree = "<group>"; };
+		28DBAEFD2300B48F0009DD8C /* SteamGames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SteamGames.json; sourceTree = "<group>"; };
+		28DBAEFF2300B90D0009DD8C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		28DBAF012300BA050009DD8C /* SteamGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,14 +117,15 @@
 		2847124F22FF12640050605C /* GameCollection */ = {
 			isa = PBXGroup;
 			children = (
+				2847125C22FF12640050605C /* Info.plist */,
+				2847125022FF12640050605C /* AppDelegate.swift */,
+				2847125722FF12640050605C /* Assets.xcassets */,
+				28DBAEFC2300B4750009DD8C /* DataFiles */,
 				28DBAEE82300836C0009DD8C /* GameList */,
 				28DBAEF5230085EC0009DD8C /* Helpers */,
-				2847128222FF18EB0050605C /* Network */,
-				2847125022FF12640050605C /* AppDelegate.swift */,
-				2847125422FF12640050605C /* Main.storyboard */,
-				2847125722FF12640050605C /* Assets.xcassets */,
 				2847125922FF12640050605C /* LaunchScreen.storyboard */,
-				2847125C22FF12640050605C /* Info.plist */,
+				2847125422FF12640050605C /* Main.storyboard */,
+				2847128222FF18EB0050605C /* Network */,
 			);
 			path = GameCollection;
 			sourceTree = "<group>";
@@ -144,9 +151,11 @@
 		2847128222FF18EB0050605C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2847128022FF18E40050605C /* Game.swift */,
+				2847128022FF18E40050605C /* BoardGame.swift */,
+				28DBAEFF2300B90D0009DD8C /* Game.swift */,
 				2847127E22FF18D50050605C /* GameService.swift */,
 				28DBAEED2300836C0009DD8C /* ImageService.swift */,
+				28DBAF012300BA050009DD8C /* SteamGame.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -168,6 +177,14 @@
 				28DBAEF62300860E0009DD8C /* NibNameable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		28DBAEFC2300B4750009DD8C /* DataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				28DBAEFD2300B48F0009DD8C /* SteamGames.json */,
+			);
+			path = DataFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28DBAEEF2300836C0009DD8C /* GameListCollectionViewCell.xib in Resources */,
+				28DBAEFE2300B48F0009DD8C /* SteamGames.json in Resources */,
 				2847125B22FF12640050605C /* LaunchScreen.storyboard in Resources */,
 				2847125822FF12640050605C /* Assets.xcassets in Resources */,
 				2847125622FF12640050605C /* Main.storyboard in Resources */,
@@ -306,13 +324,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				28DBAEF22300836C0009DD8C /* ImageService.swift in Sources */,
+				28DBAF002300B90D0009DD8C /* Game.swift in Sources */,
 				2847127F22FF18D50050605C /* GameService.swift in Sources */,
 				28DBAEF72300860E0009DD8C /* NibNameable.swift in Sources */,
 				2847125122FF12640050605C /* AppDelegate.swift in Sources */,
 				28DBAEF02300836C0009DD8C /* GameGridCollectionViewLayout.swift in Sources */,
 				28DBAEF12300836C0009DD8C /* GameListCollectionViewCell.swift in Sources */,
 				28DBAEF42300841C0009DD8C /* GameListViewController.swift in Sources */,
-				2847128122FF18E40050605C /* Game.swift in Sources */,
+				28DBAF022300BA050009DD8C /* SteamGame.swift in Sources */,
+				2847128122FF18E40050605C /* BoardGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
