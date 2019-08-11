@@ -24,6 +24,9 @@
 		28DBAEFE2300B48F0009DD8C /* SteamGames.json in Resources */ = {isa = PBXBuildFile; fileRef = 28DBAEFD2300B48F0009DD8C /* SteamGames.json */; };
 		28DBAF002300B90D0009DD8C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAEFF2300B90D0009DD8C /* Game.swift */; };
 		28DBAF022300BA050009DD8C /* SteamGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAF012300BA050009DD8C /* SteamGame.swift */; };
+		28DBAF052300D3EC0009DD8C /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAF042300D3EC0009DD8C /* GameDetailsViewController.swift */; };
+		28DBAF072300D8180009DD8C /* GameMainDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DBAF062300D8180009DD8C /* GameMainDetailsTableViewCell.swift */; };
+		28DBAF092300D8470009DD8C /* GameMainDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DBAF082300D8470009DD8C /* GameMainDetailsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		28DBAEFD2300B48F0009DD8C /* SteamGames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SteamGames.json; sourceTree = "<group>"; };
 		28DBAEFF2300B90D0009DD8C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		28DBAF012300BA050009DD8C /* SteamGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamGame.swift; sourceTree = "<group>"; };
+		28DBAF042300D3EC0009DD8C /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
+		28DBAF062300D8180009DD8C /* GameMainDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		28DBAF082300D8470009DD8C /* GameMainDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameMainDetailsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +127,12 @@
 				2847125022FF12640050605C /* AppDelegate.swift */,
 				2847125722FF12640050605C /* Assets.xcassets */,
 				28DBAEFC2300B4750009DD8C /* DataFiles */,
+				28DBAF032300D3D10009DD8C /* GameDetails */,
 				28DBAEE82300836C0009DD8C /* GameList */,
 				28DBAEF5230085EC0009DD8C /* Helpers */,
+				2847128222FF18EB0050605C /* Network */,
 				2847125922FF12640050605C /* LaunchScreen.storyboard */,
 				2847125422FF12640050605C /* Main.storyboard */,
-				2847128222FF18EB0050605C /* Network */,
 			);
 			path = GameCollection;
 			sourceTree = "<group>";
@@ -185,6 +192,16 @@
 				28DBAEFD2300B48F0009DD8C /* SteamGames.json */,
 			);
 			path = DataFiles;
+			sourceTree = "<group>";
+		};
+		28DBAF032300D3D10009DD8C /* GameDetails */ = {
+			isa = PBXGroup;
+			children = (
+				28DBAF042300D3EC0009DD8C /* GameDetailsViewController.swift */,
+				28DBAF062300D8180009DD8C /* GameMainDetailsTableViewCell.swift */,
+				28DBAF082300D8470009DD8C /* GameMainDetailsTableViewCell.xib */,
+			);
+			path = GameDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +315,7 @@
 				28DBAEFE2300B48F0009DD8C /* SteamGames.json in Resources */,
 				2847125B22FF12640050605C /* LaunchScreen.storyboard in Resources */,
 				2847125822FF12640050605C /* Assets.xcassets in Resources */,
+				28DBAF092300D8470009DD8C /* GameMainDetailsTableViewCell.xib in Resources */,
 				2847125622FF12640050605C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,7 +348,9 @@
 				2847125122FF12640050605C /* AppDelegate.swift in Sources */,
 				28DBAEF02300836C0009DD8C /* GameGridCollectionViewLayout.swift in Sources */,
 				28DBAEF12300836C0009DD8C /* GameListCollectionViewCell.swift in Sources */,
+				28DBAF052300D3EC0009DD8C /* GameDetailsViewController.swift in Sources */,
 				28DBAEF42300841C0009DD8C /* GameListViewController.swift in Sources */,
+				28DBAF072300D8180009DD8C /* GameMainDetailsTableViewCell.swift in Sources */,
 				28DBAF022300BA050009DD8C /* SteamGame.swift in Sources */,
 				2847128122FF18E40050605C /* BoardGame.swift in Sources */,
 			);

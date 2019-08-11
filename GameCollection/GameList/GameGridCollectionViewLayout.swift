@@ -79,7 +79,9 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
             xOffset = CGFloat(column) * columnWidth + spaceBetweenCells
         }
         
-        contentHeight = yOffsetTotals.max() ?? 0
+        //Button Height is 56 and vertical padding is 40
+        let pickMeButtonSpacing: CGFloat = 96
+        contentHeight = (yOffsetTotals.max() ?? 0) + pickMeButtonSpacing
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

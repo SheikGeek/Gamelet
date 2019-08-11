@@ -15,6 +15,8 @@ protocol Game: class {
     var imageURLString: String { get }
     var owned: Bool { get set }
     var gameType: GameType { get }
+    
+    func formattedGameTypeString() -> String
 }
 
 enum GameType: String {

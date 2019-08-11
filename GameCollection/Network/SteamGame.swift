@@ -33,4 +33,8 @@ class SteamGame: Codable, Game {
         let baseURLString = "http://media.steampowered.com/steamcommunity/public/images/apps/"
         return "\(baseURLString)\(id)/\(imageHashString).jpg"
     }
+    
+    func formattedGameTypeString() -> String {
+        return gameType.rawValue
+    }
 }

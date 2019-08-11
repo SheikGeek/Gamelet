@@ -38,4 +38,13 @@ class BoardGame: Codable, Game {
         case numPlays
         case owned
     }
+    
+    func formattedGameTypeString() -> String {
+        var gameTypeString = gameType.rawValue
+        if isExpansion {
+            gameTypeString += " - expansion"
+        }
+        
+        return gameTypeString
+    }
 }

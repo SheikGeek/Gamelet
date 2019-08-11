@@ -12,16 +12,54 @@ class GameListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var layout: GameGridCollectionViewLayout!
+    @IBOutlet weak var pickForMeButton: UIButton!
+    
+    private let showGameSegueIdentifier = "ShowGameChoiceSegue"
     
     private var dataSource = [Game]()
+    private var selectedGame: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "What Should I Play Today?"
         
         layout.delegate = self
         collectionView.register(GameListCollectionViewCell.nib, forCellWithReuseIdentifier: GameListCollectionViewCell.nibName)
         
         updateDataSource()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectedGame = nil
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        backItem.tintColor = UIColor(named: "Secondary Color")
+        navigationItem.backBarButtonItem = backItem
+        
+        if let viewController = segue.destination as? GameDetailsViewController {
+            viewController.game = selectedGame
+        }
+    }
+    
+    @IBAction func tappedPickForMe(_ sender: UIButton) {
+        guard let randomGame = dataSource.randomElement() else {
+            let alert = UIAlertController(title: "Sorry!", message: "It looks like you don't have any games to choose from.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK :(", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        selectedGame = randomGame
+        performSegue(withIdentifier: showGameSegueIdentifier, sender: self)
     }
 }
 
@@ -37,14 +75,14 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         let game = dataSource[indexPath.item]
-        var gameTypeString = game.gameType.rawValue
-        if let boardGame = game as? BoardGame, boardGame.isExpansion {
-            gameTypeString += " - expansion"
-        }
-
-        cell.setup(imageURL: game.thumbnailURLString, name: game.name, typeString: gameTypeString)
+        cell.setup(imageURL: game.thumbnailURLString, name: game.name, typeString: game.formattedGameTypeString())
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedGame = dataSource[indexPath.item]
+        performSegue(withIdentifier: showGameSegueIdentifier, sender: self)
     }
 }
 
@@ -58,6 +96,10 @@ private extension GameListViewController {
                 self?.collectionView.reloadData()
             }
         }
+    }
+    
+    func setupButton() {
+        pickForMeButton.layer.cornerRadius = 4.0
     }
 }
 
