@@ -22,9 +22,20 @@ class GameService: NSObject {
             completion([])
             return
         }
-        
-        let urlRequest = URLRequest(url: url)
-        let session = URLSession(configuration: .default)
-        
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                completion([])
+                return
+            }
+            
+            do {
+                let games = try JSONDecoder().decode([Game].self, from: data)
+                completion(games)
+            } catch {
+                print("Error: \(error)")
+                completion([])
+            }
+        }.resume()
     }
 }
