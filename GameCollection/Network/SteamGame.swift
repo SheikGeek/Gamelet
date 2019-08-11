@@ -30,6 +30,6 @@ class SteamGame: Codable, Game {
     
     func createImageURLString() -> String {
         let baseURLString = "http://media.steampowered.com/steamcommunity/public/images/apps/"
-        return "\(baseURLString)\(id)/\(imageHashString)"
+        return "\(baseURLString)\(id)/\(imageHashString).jpg"
     }
 }
