@@ -63,7 +63,8 @@ private extension GameService {
             }
             
             do {
-                self?.boardGames = try JSONDecoder().decode([BoardGame].self, from: data)
+                let games = try JSONDecoder().decode([BoardGame].self, from: data)
+                self?.boardGames = games.filter { $0.owned }
                 
                 group.leave()
             } catch {
