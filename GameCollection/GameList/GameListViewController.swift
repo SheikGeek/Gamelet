@@ -37,7 +37,12 @@ extension GameListViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         let game = dataSource[indexPath.item]
-        cell.setup(imageURL: game.thumbnailURLString, name: game.name)
+        var gameTypeString = game.gameType.rawValue
+        if let boardGame = game as? BoardGame, boardGame.isExpansion {
+            gameTypeString += " - expansion"
+        }
+
+        cell.setup(imageURL: game.thumbnailURLString, name: game.name, typeString: gameTypeString)
         
         return cell
     }

@@ -14,4 +14,10 @@ protocol Game: class {
     var thumbnailURLString: String { get }
     var imageURLString: String { get }
     var owned: Bool { get set }
+    var gameType: GameType { get }
+}
+
+enum GameType: String {
+    case videoGame = "Video Game"
+    case boardGame = "Board Game"
 }

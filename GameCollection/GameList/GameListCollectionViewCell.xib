@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,10 +14,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameListCollectionViewCell" id="Gn1-y0-mhq" customClass="GameListCollectionViewCell" customModule="GameCollection" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="160" height="226"/>
+            <rect key="frame" x="0.0" y="0.0" width="160" height="246"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="160" height="226"/>
+                <rect key="frame" x="0.0" y="0.0" width="160" height="246"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4e-bK-BzF">
@@ -31,24 +32,39 @@
                             <constraint firstAttribute="height" constant="160" id="9Zm-qT-lyn"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YI-gu-hhH">
+                        <rect key="frame" x="20" y="211" width="120" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" name="Secondary Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8Ce-e3-ytW" secondAttribute="trailing" constant="20" id="079-GV-gVI"/>
                 <constraint firstItem="8Ce-e3-ytW" firstAttribute="top" secondItem="Gn1-y0-mhq" secondAttribute="top" constant="20" id="7dj-q6-7c7"/>
-                <constraint firstAttribute="bottom" secondItem="d4e-bK-BzF" secondAttribute="bottom" constant="20" id="Dop-FD-83q"/>
                 <constraint firstItem="d4e-bK-BzF" firstAttribute="leading" secondItem="Gn1-y0-mhq" secondAttribute="leading" constant="20" id="Ed1-tg-Zfm"/>
+                <constraint firstAttribute="bottom" secondItem="4YI-gu-hhH" secondAttribute="bottom" constant="20" id="GcB-gP-1mD"/>
+                <constraint firstItem="4YI-gu-hhH" firstAttribute="leading" secondItem="Gn1-y0-mhq" secondAttribute="leading" constant="20" id="LRb-ZJ-O82"/>
                 <constraint firstAttribute="trailing" secondItem="d4e-bK-BzF" secondAttribute="trailing" constant="20" id="NOV-X4-7XY"/>
                 <constraint firstItem="d4e-bK-BzF" firstAttribute="top" secondItem="8Ce-e3-ytW" secondAttribute="bottom" constant="10" id="eJu-V6-DXV"/>
                 <constraint firstItem="8Ce-e3-ytW" firstAttribute="leading" secondItem="Gn1-y0-mhq" secondAttribute="leading" constant="20" id="eYu-9j-Nof"/>
+                <constraint firstItem="4YI-gu-hhH" firstAttribute="top" secondItem="d4e-bK-BzF" secondAttribute="bottom" constant="5" id="mmM-k2-Siw"/>
+                <constraint firstAttribute="trailing" secondItem="4YI-gu-hhH" secondAttribute="trailing" constant="20" id="xOc-Sc-KCQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="mDu-39-ddJ"/>
             <size key="customSize" width="159" height="194"/>
             <connections>
                 <outlet property="gameImageView" destination="8Ce-e3-ytW" id="h3c-Xg-MjR"/>
                 <outlet property="gameNameLabel" destination="d4e-bK-BzF" id="E1V-Wx-oeb"/>
+                <outlet property="gameTypeLabel" destination="4YI-gu-hhH" id="GNC-Ze-6cj"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="33"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="Secondary Color">
+            <color red="0.27843137254901962" green="0.33725490196078434" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

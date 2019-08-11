@@ -14,6 +14,7 @@ class BoardGame: Codable, Game {
     var id = -1
     var imageURLString = ""
     var thumbnailURLString = ""
+    var gameType = GameType.boardGame
     
     var minPlayers = -1
     var maxPlayers = -1

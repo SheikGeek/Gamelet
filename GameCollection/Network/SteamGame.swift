@@ -13,6 +13,7 @@ class SteamGame: Codable, Game {
     var name = ""
     var id = -1
     var owned = true
+    var gameType = GameType.videoGame
     var imageURLString: String {
         return createImageURLString()
     }
