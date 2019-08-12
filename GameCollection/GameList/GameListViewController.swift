@@ -52,7 +52,7 @@ class GameListViewController: UIViewController {
     @IBAction func tappedPickForMe(_ sender: UIButton) {
         guard let randomGame = dataSource.randomElement() else {
             let alert = UIAlertController(title: "Sorry!", message: "It looks like you don't have any games to choose from.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK :(", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             
             return
@@ -99,6 +99,7 @@ private extension GameListViewController {
     }
     
     func setupButton() {
+        //Did not finish implementing style here
         pickForMeButton.layer.cornerRadius = 4.0
     }
 }

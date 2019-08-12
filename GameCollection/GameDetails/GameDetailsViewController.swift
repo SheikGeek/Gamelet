@@ -21,7 +21,6 @@ class GameDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.register(GameMainDetailsTableViewCell.nib, forCellReuseIdentifier: GameMainDetailsTableViewCell.nibName)
-        
     }
 }
 
