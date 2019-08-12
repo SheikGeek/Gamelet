@@ -47,17 +47,14 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
         var column = 0
         var xOffset: CGFloat = spaceBetweenCells
         var yOffsetTotals = [CGFloat]()
-        var nextRowYOffsets = [CGFloat]()
         
         for _ in 0..<numberOfColumns {
             yOffsetTotals.append(spaceBetweenCells)
-            nextRowYOffsets.append(0)
         }
 
         for index in 0 ..< numberOfItems {
             
             let indexPath = IndexPath(item: index, section: 0)
-            
             let cellWidth = columnWidth - (spaceBetweenCells + (spaceBetweenCells * CGFloat(column)))
             let cellHeight = delegate?.cellHeight(at: indexPath, cellWidth: cellWidth) ?? 0
             let frame = CGRect(x: xOffset, y: yOffsetTotals[column], width: cellWidth, height: cellHeight)
@@ -66,7 +63,6 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
             attributes.frame = frame
             layoutAttributes.append(attributes)
             
-            nextRowYOffsets[column] = cellHeight + spaceBetweenCells
             yOffsetTotals[column] += cellHeight + spaceBetweenCells
 
             let nextColumn = column + 1

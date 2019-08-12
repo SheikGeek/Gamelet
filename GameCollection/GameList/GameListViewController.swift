@@ -105,7 +105,7 @@ private extension GameListViewController {
 
 extension GameListViewController: GameGridCollectionViewLayoutDelegate {
     func cellHeight(at indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {
-        guard indexPath.item < dataSource.count - 1 else {
+        guard indexPath.item < dataSource.count else {
             //out of index, don't try to fetch the data
             return 0
         }
