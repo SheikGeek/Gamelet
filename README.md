@@ -1,6 +1,6 @@
 # Gamelet
 > Many games enter, only one will be the victor! . . .unless I feel like playing multiple games
-> <br/>``-`` Me
+> <br/>\- Me
 
 This app contains a mashup of my board games and Steam games. I have a lot of trouble picking something to play most of the time, so now there is DEFINITELY another app for that. I can now easily scroll through all the games I own and randomly pick one to play when I'm feeling indecisive
 
