@@ -31,6 +31,7 @@ The following is a list of features and tech debt I would like to implement/clea
 - Create a server side endpoint that returns both apis data, normalized.
 - Modify the networking layer to have more reusability (ie abstract the operations into separate classes).
 - Highlighted states for buttons and cells
+- Rename project, target, and folder structure to be Gamelet instead of GameCollection
 
 ### New/Improved Features
 - Better list formatting
