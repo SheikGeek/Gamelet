@@ -113,4 +113,19 @@ extension GameListViewController: GameGridCollectionViewLayoutDelegate {
         let game = dataSource[indexPath.item]
         return GameListCollectionViewCell.calculateCellHeight(name: game.name, width: cellWidth)
     }
+    
+    func firstLetterOfItem(at indexPath: IndexPath) -> String {
+        guard indexPath.item < dataSource.count else {
+            //out of index, don't try to fetch the data
+            return ""
+        }
+        
+        let game = dataSource[indexPath.item]
+        guard let firstCharacter = game.name.first?.lowercased() else {
+            //The first character could not be found
+            return ""
+        }
+        
+        return "\(firstCharacter)"
+    }
 }

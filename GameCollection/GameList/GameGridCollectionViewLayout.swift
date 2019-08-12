@@ -11,6 +11,7 @@ import UIKit
 
 protocol GameGridCollectionViewLayoutDelegate: class {
     func cellHeight(at indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat
+    func firstLetterOfItem(at indexPath: IndexPath) -> String
 }
 
 class GameGridCollectionViewLayout: UICollectionViewLayout {
@@ -47,14 +48,20 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
         var column = 0
         var xOffset: CGFloat = spaceBetweenCells
         var yOffsetTotals = [CGFloat]()
+        var currentLetter = ""
         
         for _ in 0..<numberOfColumns {
             yOffsetTotals.append(spaceBetweenCells)
         }
 
+        //place these by column
+        //Separate out by letter
         for index in 0 ..< numberOfItems {
             
             let indexPath = IndexPath(item: index, section: 0)
+            if currentLetter.isEmpty {
+                currentLetter = delegate?.firstLetterOfItem(at: indexPath) ?? ""
+            }
             
             var cellWidth = columnWidth
             if column != numberOfColumns - 1 {
@@ -71,11 +78,21 @@ class GameGridCollectionViewLayout: UICollectionViewLayout {
             yOffsetTotals[column] += cellHeight + spaceBetweenCells
 
             let nextColumn = column + 1
-            if nextColumn > numberOfColumns - 1 {
+            let nextLetter = delegate?.firstLetterOfItem(at: IndexPath(item: index + 1, section: 0)) ?? ""
+            if nextLetter != currentLetter {
+                if let currentMaxYOffset = yOffsetTotals.max() {
+                    for index in yOffsetTotals.indices {
+                        yOffsetTotals[index] = currentMaxYOffset
+                    }
+                }
+                column = 0
+            } else if nextColumn > numberOfColumns - 1  {
                 column = 0
             } else {
                 column = nextColumn
             }
+            
+            currentLetter = nextLetter
             
             xOffset = CGFloat(column) * columnWidth + spaceBetweenCells
         }
