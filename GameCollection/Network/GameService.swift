@@ -14,7 +14,6 @@ class GameService: NSObject {
     private override init() {}
     
     private var boardGames = [BoardGame]()
-    private var steamGames = [SteamGame]()
 
     private var canExecuteCompletion = false
     
@@ -75,7 +74,7 @@ private extension GameService {
     }
     
     func createSortedListOfGames() -> [Game] {
-        let allGames: [Game] = steamGames + boardGames
+        let allGames: [Game] = boardGames
         return allGames.sorted(by: { $0.name.lowercased() < $1.name.lowercased()})
     }
 }
