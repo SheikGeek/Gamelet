@@ -27,8 +27,6 @@ class GameService: NSObject {
         
         let boardAndSteamGamesOperation = BlockOperation {
             self.fetchBoardGames(withDispatchGroup: dispatchGroup)
-            self.fetchSteamGames(withDispatchGroup: dispatchGroup)
-
             dispatchGroup.wait()
         }
         
@@ -74,32 +72,6 @@ private extension GameService {
                 group.leave()
             }
         }.resume()
-    }
-    
-    func fetchSteamGames(withDispatchGroup group: DispatchGroup) {
-        
-        guard let path = Bundle.main.path(forResource: "SteamGames", ofType: "json") else {
-            steamGames = []
-            return
-        }
-        
-        let url = URL(fileURLWithPath: path)
-        group.enter()
-
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let steamGamesResponse = try JSONDecoder().decode([String: [SteamGame]].self, from: jsonData)
-            if let games = steamGamesResponse["games"] {
-                steamGames = games
-            }
-            
-            group.leave()
-        } catch {
-            print("Error: \(error)")
-            steamGames = []
-            
-            group.leave()
-        }
     }
     
     func createSortedListOfGames() -> [Game] {
