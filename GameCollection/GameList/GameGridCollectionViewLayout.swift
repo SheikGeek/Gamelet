@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol GameGridCollectionViewLayoutDelegate: class {
+protocol GameGridCollectionViewLayoutDelegate: AnyObject {
     func cellHeight(at indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat
     func firstLetterOfItem(at indexPath: IndexPath) -> String
 }

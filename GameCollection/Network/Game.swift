@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Game: class {
+protocol Game: AnyObject {
     var name: String { get set }
     var id: Int { get set }
     var thumbnailURLString: String { get }

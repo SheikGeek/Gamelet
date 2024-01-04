@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol NibNameable: class {
+protocol NibNameable: AnyObject {
     static var nibName: String { get }
     static var nib: UINib { get }
 }
